@@ -9,4 +9,6 @@ class MyColors {
   static const textPrimary = Color(0xFF001B0D);
   static const menuColor = Color(0xFF32910F);
   static const carouselColor = Color(0xFF3CAE12);
+  static const itemBackground = Color(0xFFE3F6DC);
+  static const priceColor = Color(0xFFE7AC07);
 }
