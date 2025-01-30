@@ -11,4 +11,5 @@ class MyColors {
   static const carouselColor = Color(0xFF3CAE12);
   static const itemBackground = Color(0xFFE3F6DC);
   static const priceColor = Color(0xFFE7AC07);
+  static const unselectedColor = Color(0xFFC5ECB6);
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gino_food/pages/homepage.dart';
+import 'package:gino_food/pages/main_page.dart';
 import 'package:gino_food/utils/colors.dart';
 import 'package:gino_food/utils/images.dart';
 import 'package:gino_food/utils/sizes.dart';
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Homepage(),
+                      builder: (context) => const MainScreen(),
                     ),
                   );
                 },

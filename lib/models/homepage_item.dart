@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gino_food/utils/images.dart';
 import 'package:gino_food/utils/colors.dart';
+import 'package:gino_food/utils/sizes.dart';
 
 class HomeItem {
   final String image;
@@ -21,33 +22,61 @@ final List<HomeItem> items = [
 
 Widget buildGridItem(HomeItem item) {
   return Container(
+    padding: const EdgeInsets.all(
+      10.0,
+    ),
     decoration: BoxDecoration(
       color: MyColors.itemBackground,
-      borderRadius: BorderRadius.circular(10.0),
+      borderRadius: BorderRadius.circular(
+        10.0,
+      ),
     ),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: Image.asset(
             item.image,
-            fit: BoxFit.cover,
           ),
         ),
-        Text(
-          item.name,
-          style: const TextStyle(
-            color: MyColors.textPrimary,
-            fontWeight: FontWeight.normal,
-            fontSize: 16,
+        // Item name
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+          child: Text(
+            item.name,
+            style: const TextStyle(
+              color: MyColors.textPrimary,
+              fontWeight: FontWeight.normal,
+              fontSize: 16,
+            ),
           ),
         ),
-        Text(
-          "₦${item.price}",
-          style: const TextStyle(
-            color: MyColors.priceColor,
-            fontSize: 14,
-          ),
+        // Row for price and add icon
+        Row(
+          children: [
+            Text(
+              "₦${item.price}",
+              style: TextStyle(
+                color: MyColors.priceColor,
+                fontWeight: MySize.boldFontWeight,
+              ),
+            ),
+            SizedBox(
+              width: MySize.screenWidth * 0.2,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: MyColors.secondary,
+                borderRadius: BorderRadius.circular(2.0),
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.add,
+                  color: MyColors.primaryColor,
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     ),
